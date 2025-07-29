@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multi Calculator</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f0f0f0; }
+    .box { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 10px; }
+    input { padding: 8px; margin: 5px 0; width: 100%; }
+    button { padding: 10px; width: 100%; background: #007BFF; color: white; border: none; border-radius: 5px; }
+    h2 { color: #333; }
+  </style>
+</head>
+<body>
+  <h1>Multi Calculator</h1>
+
+  <div class="box">
+    <h2>Area of Circle</h2>
+    <input id="circleRadius" placeholder="Enter radius" type="number" />
+    <button onclick="calcCircle()">Calculate</button>
+    <p id="circleResult"></p>
+  </div>
+
+  <div class="box">
+    <h2>Area of Rectangle</h2>
+    <input id="rectLength" placeholder="Enter length" type="number" />
+    <input id="rectBreadth" placeholder="Enter breadth" type="number" />
+    <button onclick="calcRectangle()">Calculate</button>
+    <p id="rectResult"></p>
+  </div>
+
+  <div class="box">
+    <h2>Area of Sphere</h2>
+    <input id="sphereRadius" placeholder="Enter radius" type="number" />
+    <button onclick="calcSphere()">Calculate</button>
+    <p id="sphereResult"></p>
+  </div>
+
+  <script>
+    function calcCircle() {
+      let r = parseFloat(document.getElementById("circleRadius").value);
+      let area = 3.1416 * r * r;
+      document.getElementById("circleResult").innerText = "Area: " + area.toFixed(2);
+    }
+
+    function calcRectangle() {
+      let l = parseFloat(document.getElementById("rectLength").value);
+      let b = parseFloat(document.getElementById("rectBreadth").value);
+      let area = l * b;
+      document.getElementById("rectResult").innerText = "Area: " + area.toFixed(2);
+    }
+
+    function calcSphere() {
+      let r = parseFloat(document.getElementById("sphereRadius").value);
+      let area = 4 * 3.1416 * r * r;
+      document.getElementById("sphereResult").innerText = "Area: " + area.toFixed(2);
+    }
+  </script>
+</body>
+</html>
